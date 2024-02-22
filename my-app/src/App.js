@@ -1,10 +1,15 @@
-import "./App.css";
-import { LandingPage } from "./Components";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { LandingPage, GameOver } from "./Components"; // Import your GameOverPage component
+
 function App() {
   return (
-    <div>
-      <LandingPage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} exact />
+        <Route path="/game-over" element={<GameOver />} />
+      </Routes>
+    </Router>
   );
 }
 
