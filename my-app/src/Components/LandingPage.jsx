@@ -4,12 +4,10 @@ function LandingPage() {
   return (
     <div>
       {" "}
-      <iframe
-        src="/Catcher/index.html"
-        width="800"
-        height="600"
-        title="Godot Game"
-      ></iframe>
+      <h1>
+        {" "}
+        <a href="/Catcher/index.html">Hello</a>
+      </h1>
     </div>
   );
 }
