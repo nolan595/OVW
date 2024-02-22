@@ -1,11 +1,9 @@
 import "./App.css";
+import { LandingPage } from "./Components";
 function App() {
   return (
     <div>
-      <h1>
-        {" "}
-        <a href="/Catcher/index.html">Hello</a>{" "}
-      </h1>
+      <LandingPage />
     </div>
   );
 }
