@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FacebookShareButton,
-  WhatsappShareButton,
-  TwitterShareButton,
-  FacebookIcon,
-} from "react-share";
+import { WhatsappShareButton, FacebookIcon } from "react-share";
 function GameOver() {
   return (
     <div>
