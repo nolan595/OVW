@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // assuming you're using react-router for navigation
+import { useNavigate } from "react-router-dom";
+import "../styles/landingPage.css";
 
 function LandingPage() {
-  const [showGame, setShowGame] = useState(false);
+  const [showIframe, setShowIframe] = useState(false); // State to manage iframe display
   const navigate = useNavigate();
 
   useEffect(() => {
     const handleMessage = (event) => {
-      // Check for the 'gameOver' message
       if (event.data === "gameOver") {
-        // Redirect to the game-over page
-        navigate("/game-over"); // Adjust the route as needed
+        navigate("/game-over");
       }
     };
 
@@ -19,23 +18,19 @@ function LandingPage() {
   }, [navigate]);
 
   return (
-    <div>
-      {/* Button to toggle the game's display */}
-      <button onClick={() => setShowGame(true)}>Play Game</button>
+    <div className="landingPage">
+      <div className="mainContent">
+        {/* Button to toggle the iframe's display */}
+        <button onClick={() => setShowIframe(!showIframe)}>
+          {showIframe ? "Hide Game" : "Play Game"}
+        </button>
+      </div>
 
-      {/* Conditionally render the iframe based on showGame state */}
-      {showGame && (
+      {/* Conditionally render the iframe based on showIframe state */}
+      {showIframe && (
         <iframe
-          src="/Catcher/index.html"
-          style={{
-            width: "100vw",
-            height: "100vh",
-            position: "fixed",
-            top: 0,
-            left: 0,
-            border: "none",
-          }}
-          title="OVW"
+          src="/Catcher/index.html" // Adjust the src to your game's URL
+          title="Game"
         ></iframe>
       )}
     </div>
