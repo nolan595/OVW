@@ -1,0 +1,75 @@
+.gameOver {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #282c34; /* Dark background for contrast */
+  color: #fff; /* White text for readability */
+  font-family: "Arial", sans-serif; /* Simple, readable font */
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 2.5rem; /* Large, noticeable text */
+}
+
+/* Updated button container to hold all social buttons and copy link button */
+.buttonContainer {
+  display: flex;
+  gap: 20px; /* Adjust space between buttons */
+  margin-top: 20px; /* Space between the title and the button container */
+}
+
+/* Style adjustments for the social and copy link buttons */
+.WhatsappShareButton,
+.TwitterShareButton,
+.FacebookShareButton,
+.copyLinkButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out; /* Smooth scaling effect */
+}
+
+.WhatsappShareButton:hover,
+.TwitterShareButton:hover,
+.FacebookShareButton:hover,
+.copyLinkButton:hover {
+  transform: scale(1.1); /* Slightly enlarge buttons on hover */
+}
+
+/* Specific styles for the copy link button */
+.copyLinkButton {
+  color: #fff; /* Match the icon color to the text */
+  display: inline-flex; /* Ensure it aligns well with the other icons */
+}
+
+/* Icon size adjustment for consistency */
+.WhatsappIcon,
+.TwitterIcon,
+.FacebookIcon,
+svg {
+  filter: drop-shadow(2px 4px 6px black); /* Soft shadow for depth */
+  width: 32px;
+  height: 32px;
+}
+
+.mainPageButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #f76c6c; /* Choose a color that fits your design */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.mainPageButton:hover {
+  background-color: #f54747; /* Slightly darker shade on hover */
+}
