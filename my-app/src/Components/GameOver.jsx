@@ -5,8 +5,6 @@ import {
   WhatsappIcon,
   TwitterShareButton,
   TwitterIcon,
-  FacebookShareButton,
-  FacebookIcon,
 } from "react-share";
 import { FiCopy } from "react-icons/fi";
 import copy from "copy-to-clipboard";
@@ -26,29 +24,34 @@ function GameOver() {
   };
 
   return (
-    <div className="gameOver">
-      <h1>Game Over</h1>
-      <div className="buttonContainer">
-        <WhatsappShareButton url={gameUrl} title={title}>
-          <WhatsappIcon size={32} round />
-        </WhatsappShareButton>
-
-        <TwitterShareButton url={gameUrl} title={title}>
-          <TwitterIcon size={32} round />
-        </TwitterShareButton>
-
-        <FacebookShareButton url={gameUrl} title={title}>
-          <FacebookIcon size={32} round />
-        </FacebookShareButton>
-
-        {/* Copy Link Button */}
-        <button onClick={handleCopyLink} className="copyLinkButton">
-          <FiCopy size={32} />
+    <div className="main_content">
+      <div className="card">
+        <div className="score_container">
+          <h1>Score</h1>
+          <div className="score_amount">
+            <h2>500</h2>
+          </div>
+        </div>
+        <div className="upsell_image">
+          <a href="https://ovwwrestling.ticketspice.com/ovw-march-mayhem-">
+            <img src="/upsell.jpeg" alt="March Mayhem" />
+          </a>
+        </div>
+        <div className="share-buttons">
+          <WhatsappShareButton url={gameUrl} title={title}>
+            <WhatsappIcon size={32} round />
+          </WhatsappShareButton>
+          <TwitterShareButton url={gameUrl} title={title}>
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+          <button onClick={handleCopyLink}>
+            <FiCopy size={32} />
+          </button>
+        </div>
+        <button className="button menu" onClick={goToMainMenu}>
+          Menu
         </button>
       </div>
-      <button onClick={goToMainMenu} className="mainPageButton">
-        Play Again
-      </button>
     </div>
   );
 }
