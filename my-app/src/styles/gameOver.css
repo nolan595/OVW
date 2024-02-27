@@ -46,6 +46,7 @@ body {
   padding: 10px; /* Adjust padding as needed */
   max-width: 200px; /* Adjust this to your preference */
   display: block; /* Aligns the score amount div to the center */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Adjust the heading sizes for the score */
@@ -95,6 +96,7 @@ h2 {
   cursor: pointer;
   border: none;
   background: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .share-buttons {
@@ -128,6 +130,7 @@ h2 {
   margin-top: 4x; /* Add some space above the button */
   margin-bottom: 4px;
   align-self: center; /* Center the button in the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive adjustments */

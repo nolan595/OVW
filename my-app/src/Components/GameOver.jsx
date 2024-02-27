@@ -8,11 +8,13 @@ import {
 } from "react-share";
 import { FiCopy } from "react-icons/fi";
 import copy from "copy-to-clipboard";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
 
 function GameOver() {
   const gameUrl = "https://ovw-3pigs.netlify.app/";
   const navigate = useNavigate();
+  const location = useLocation();
+  const score = location.state?.score || "0";
   const title = "Can you help the OVW Roster fight off the aliens?";
 
   const handleCopyLink = () => {
@@ -29,7 +31,7 @@ function GameOver() {
         <div className="score_container">
           <h1>Score</h1>
           <div className="score_amount">
-            <h2>500</h2>
+            <h2>{score}</h2>
           </div>
         </div>
         <div className="upsell_image">
@@ -49,7 +51,7 @@ function GameOver() {
           </button>
         </div>
         <button className="button menu" onClick={goToMainMenu}>
-          Menu
+          PLAY AGAIN
         </button>
       </div>
     </div>

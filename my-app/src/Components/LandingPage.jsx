@@ -8,8 +8,14 @@ function LandingPage() {
 
   useEffect(() => {
     const handleMessage = (event) => {
-      if (event.data === "gameOver") {
-        navigate("/game-over");
+      try {
+        const data = JSON.parse(event.data);
+        if (data.action === "gameOver") {
+          // Navigate to the game-over page with score data
+          navigate("/game-over", { state: { score: data.score } });
+        }
+      } catch (e) {
+        console.error("Error parsing message from iframe:", e);
       }
     };
 
