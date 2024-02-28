@@ -12,7 +12,6 @@ function LandingPage() {
       try {
         const data = JSON.parse(event.data);
         if (data.action === "gameOver") {
-          // Navigate to the game-over page with score data
           navigate("/game-over", { state: { score: data.score } });
         }
       } catch (e) {
@@ -32,7 +31,6 @@ function LandingPage() {
       exit={{ opacity: 0 }}
     >
       <div className="mainContent">
-        {/* Button now only shows "Play Game" and sets showIframe to true */}
         {!showIframe && (
           <button onClick={() => setShowIframe(true)}>Play Game</button>
         )}
@@ -40,7 +38,9 @@ function LandingPage() {
       {showIframe && (
         <div className="iframeContainer">
           <iframe src="/Catcher/index.html" title="Game"></iframe>
-          {/* Removed the toggle button functionality, so no need for a close button here */}
+          <button className="closeButton" onClick={() => setShowIframe(false)}>
+            X
+          </button>
         </div>
       )}
     </motion.div>
