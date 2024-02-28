@@ -9,6 +9,7 @@ import {
 import { FiCopy } from "react-icons/fi";
 import copy from "copy-to-clipboard";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
+import { motion } from "framer-motion";
 
 function GameOver() {
   const gameUrl = "https://ovw-3pigs.netlify.app/";
@@ -26,7 +27,12 @@ function GameOver() {
   };
 
   return (
-    <div className="main_content">
+    <motion.div
+      className="main_content"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className="card">
         <div className="score_container">
           <h1>Score</h1>
@@ -54,7 +60,7 @@ function GameOver() {
           PLAY AGAIN
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/landingPage.css";
+import { motion } from "framer-motion";
 
 function LandingPage() {
   const [showIframe, setShowIframe] = useState(false);
@@ -24,7 +25,12 @@ function LandingPage() {
   }, [navigate]);
 
   return (
-    <div className="landingPage">
+    <motion.div
+      className="landingPage"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className="mainContent">
         {/* Button now only shows "Play Game" and sets showIframe to true */}
         {!showIframe && (
@@ -37,7 +43,7 @@ function LandingPage() {
           {/* Removed the toggle button functionality, so no need for a close button here */}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
 
