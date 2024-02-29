@@ -1,27 +1,37 @@
 import React from "react";
 import "../styles/gameOver.css";
-import {
-  WhatsappShareButton,
-  WhatsappIcon,
-  TwitterShareButton,
-  TwitterIcon,
-} from "react-share";
-import { FiCopy } from "react-icons/fi";
 import copy from "copy-to-clipboard";
-import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { FiShare2 } from "react-icons/fi"; // Importing a share icon
 
 function GameOver() {
   const gameUrl = "https://ovw-3pigs.netlify.app/";
   const navigate = useNavigate();
   const location = useLocation();
   const score = location.state?.score || "0";
-  const title = "Can you help the OVW Roster fight off the aliens?";
+  const shareText = `I scored ${score} in the game! Can you beat me? Check out this awesome game: ${gameUrl}`;
 
-  const handleCopyLink = () => {
-    copy(`Check out this awesome game I played! ${gameUrl}`);
-    alert("Link copied to clipboard!");
+  const handleShare = () => {
+    console.log("navigator.share:", navigator.share); // Add this line for debugging
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "OVW Game",
+          text: `I scored ${score} in the game! Can you beat me? Check out this awesome game: ${gameUrl}`,
+          url: gameUrl,
+        })
+        .then(() => console.log("Successful share"))
+        .catch((error) => console.log("Error sharing", error));
+    } else {
+      // Fallback for desktop browsers
+      copy(
+        `I scored ${score} in the game! Can you beat me? Check out this awesome game: ${gameUrl}`
+      );
+      alert("Link copied to clipboard!");
+    }
   };
+
   const goToMainMenu = () => {
     navigate("/");
   };
@@ -33,32 +43,12 @@ function GameOver() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="card">
-        <div className="score_container">
-          <h1>Score</h1>
-          <div className="score_amount">
-            <h2>{score}</h2>
-          </div>
-        </div>
-        <div className="upsell_image">
-          <a href="https://ovwwrestling.ticketspice.com/ovw-march-mayhem-">
-            <img src="/upsell.jpeg" alt="March Mayhem" />
-          </a>
-        </div>
-        <div className="share-buttons">
-          <WhatsappShareButton url={gameUrl} title={title}>
-            <WhatsappIcon size={32} round />
-          </WhatsappShareButton>
-          <TwitterShareButton url={gameUrl} title={title}>
-            <TwitterIcon size={32} round />
-          </TwitterShareButton>
-          <button onClick={handleCopyLink}>
-            <FiCopy size={32} />
-          </button>
-        </div>
-        <button className="button menu" onClick={goToMainMenu}>
-          PLAY AGAIN
+      <div className="game-over-container">
+        {/* Other game over content */}
+        <button onClick={handleShare} className="share-button">
+          <FiShare2 /> Share Your Score
         </button>
+        {/* Possibly other buttons like goToMainMenu */}
       </div>
     </motion.div>
   );
