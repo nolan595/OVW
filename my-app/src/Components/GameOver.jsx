@@ -10,7 +10,7 @@ function GameOver() {
   const navigate = useNavigate();
   const location = useLocation();
   const score = location.state?.score || "0";
-  const shareText = `I scored ${score} in the game! Can you beat me? Check out this awesome game: ${gameUrl}`;
+  // const shareText = `I scored ${score} in the game! Can you beat me? Check out this awesome game: ${gameUrl}`;
 
   const handleShare = () => {
     console.log("navigator.share:", navigator.share); // Add this line for debugging
@@ -32,9 +32,9 @@ function GameOver() {
     }
   };
 
-  const goToMainMenu = () => {
-    navigate("/");
-  };
+  // const goToMainMenu = () => {
+  //   navigate("/");
+  // };
 
   return (
     <motion.div
