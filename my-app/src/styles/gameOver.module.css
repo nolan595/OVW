@@ -1,0 +1,29 @@
+/* In your App.css */
+.gameOver {
+  background-image: url("../images/newBGRotated.png"); /* Adjust the path as necessary */
+  background-color: lightgray; /* Fallback color */
+  background-position: center; /* Center the image */
+  background-size: cover; /* Scale the image to cover the entire container */
+  background-repeat: no-repeat; /* Do not tile the image */
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  padding: 0;
+  margin: 0;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .gameOver {
+    background-image: url("../images/newBG.png");
+  }
+}

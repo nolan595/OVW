@@ -1,6 +1,0 @@
-/* In your App.css */
-.main_content {
-  background: url("../images/lightningbg.png"), lightgray 50% / cover no-repeat;
-  height: 100vh; /* Example height, adjust as needed */
-  width: 100vw; /* Example width, adjust as needed */
-}

@@ -1,9 +1,13 @@
 .landingPage {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  /* background: linear-gradient(to right, #d66832 0%, #3f6dc9 100%); */
-  background: linear-gradient(to right, #3f6dc9 0%, #d66832 100%);
+  background-image: url("../images/newBGRotated.png"); /* Adjust the path as necessary */
+  background-color: lightgray; /* Fallback color */
+  background-position: center; /* Center the image */
+  background-size: cover; /* Scale the image to cover the entire container */
+  background-repeat: no-repeat; /* Do not tile the image */
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
 }
 
 .mainContent {
@@ -53,4 +57,10 @@
   right: 20px;
   font-size: 1rem;
   padding: 5px 10px; /* Smaller than the main button for subtlety */
+}
+
+@media (min-width: 768px) {
+  .landingPage {
+    background-image: url("../images/newBG.png");
+  }
 }

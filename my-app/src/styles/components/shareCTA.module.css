@@ -1,0 +1,16 @@
+button {
+  display: flex;
+  background-color: #cca75b;
+  padding: 16px 32px;
+  border-radius: 88px;
+  align-items: center;
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  border: none;
+}

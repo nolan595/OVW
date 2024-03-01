@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/landingPage.css";
+import styles from "../styles/landingPage.module.css";
 import { motion } from "framer-motion";
 
 function LandingPage() {
@@ -25,20 +25,23 @@ function LandingPage() {
 
   return (
     <motion.div
-      className="landingPage"
+      className={styles.landingPage}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="mainContent">
+      <div className={styles.mainContent}>
         {!showIframe && (
           <button onClick={() => setShowIframe(true)}>Play Game</button>
         )}
       </div>
       {showIframe && (
-        <div className="iframeContainer">
+        <div className={styles.iframeContainer}>
           <iframe src="/Catcher/index.html" title="Game"></iframe>
-          <button className="closeButton" onClick={() => setShowIframe(false)}>
+          <button
+            className={styles.closeButton}
+            onClick={() => setShowIframe(false)}
+          >
             X
           </button>
         </div>

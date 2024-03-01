@@ -1,16 +1,25 @@
 import React from "react";
-import "../styles/gameOver.css";
+import styles from "../styles/gameOver.module.css";
 import { motion } from "framer-motion";
+import { ShareCTA } from "./";
 function GameOver() {
   // const gameUrl = "https://ovw-3pigs.netlify.app/";
 
   return (
     <motion.div
-      className="main_content"
+      className={styles.gameOver}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-    ></motion.div>
+    >
+      <div className={styles.mainContent}>
+        <div className="score"></div>
+        <div className="ppv"></div>
+        <div className="bottom_buttons">
+          <ShareCTA />
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
