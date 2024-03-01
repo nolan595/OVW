@@ -19,7 +19,7 @@ function ShareCTA() {
       // Updated fallback for desktop browsers to use Clipboard API
       navigator.clipboard
         .writeText(
-          `I scored ${score} in the game! Can you beat me? Check out this awesome game: ${gameUrl}`
+          `I scored ${score} in the game! Can you beat me? Check out this cool game: ${gameUrl}`
         )
         .then(() => {
           alert("Link copied to clipboard!");
