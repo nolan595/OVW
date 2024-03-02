@@ -34,7 +34,7 @@ function LandingPage() {
       <div className={styles.mainContent}>
         <img className={styles.proglogueImg} src={prologue} alt="" />
         {!showIframe && (
-          <button onClick={() => setShowIframe(true)}>Play Game</button>
+          <button onClick={() => setShowIframe(true)}>PLAY GAME</button>
         )}
       </div>
       {showIframe && (
