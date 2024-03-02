@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/gameOver.module.css";
 import { motion } from "framer-motion";
-import { ShareCTA } from "./";
+import { ShareCTA, PlayAginCTA, PPVImage, Score } from "./";
 function GameOver() {
   // const gameUrl = "https://ovw-3pigs.netlify.app/";
 
@@ -13,10 +13,15 @@ function GameOver() {
       exit={{ opacity: 0 }}
     >
       <div className={styles.mainContent}>
-        <div className="score"></div>
-        <div className="ppv"></div>
-        <div className="bottom_buttons">
+        <div className={styles.score}>
+          <Score />
+        </div>
+        <div className={styles.ppv}>
+          <PPVImage />
+        </div>
+        <div className={styles.bottom_buttons}>
           <ShareCTA />
+          <PlayAginCTA />
         </div>
       </div>
     </motion.div>

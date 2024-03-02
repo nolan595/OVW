@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/landingPage.module.css";
 import { motion } from "framer-motion";
+import prologue from "../images/prologue.jpeg";
 
 function LandingPage() {
   const [showIframe, setShowIframe] = useState(false);
@@ -31,6 +32,7 @@ function LandingPage() {
       exit={{ opacity: 0 }}
     >
       <div className={styles.mainContent}>
+        <img className={styles.proglogueImg} src={prologue} alt="" />
         {!showIframe && (
           <button onClick={() => setShowIframe(true)}>Play Game</button>
         )}

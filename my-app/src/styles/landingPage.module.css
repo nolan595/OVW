@@ -1,8 +1,7 @@
 .landingPage {
   display: flex;
   flex-direction: column;
-  background-image: url("../images/newBGRotated.png"); /* Adjust the path as necessary */
-  background-color: lightgray; /* Fallback color */
+  background-color: #232323; /* Fallback color */
   background-position: center; /* Center the image */
   background-size: cover; /* Scale the image to cover the entire container */
   background-repeat: no-repeat; /* Do not tile the image */
@@ -14,8 +13,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* This centers the image */
   align-items: center;
+  position: relative; /* This is new */
 }
 
 .mainContent button,
@@ -31,10 +31,26 @@
   transition: all 0.3s ease;
 }
 
+.mainContent button {
+  position: absolute; /* This positions the button absolutely within mainContent */
+  bottom: 20%; /* Adjust this value to position the button as needed */
+  left: 50%; /* This centers the button horizontally */
+  transform: translateX(
+    -50%
+  ); /* This aligns the center of the button with the center of the container */
+  /* ... other styles ... */
+}
+
 .mainContent button:hover,
 .closeButton:hover {
   background-color: #f54747;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.proglogueImg {
+  /* Adjust if necessary */
+  height: 100svh; /* Adjust if necessary to maintain aspect ratio */
+  /* This will limit the image height to the screen height */
 }
 
 .iframeContainer {
@@ -61,6 +77,5 @@
 
 @media (min-width: 768px) {
   .landingPage {
-    background-image: url("../images/newBG.png");
   }
 }

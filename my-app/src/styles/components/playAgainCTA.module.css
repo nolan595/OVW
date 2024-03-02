@@ -1,0 +1,21 @@
+.playButton {
+  background-color: transparent;
+  min-width: 340px;
+
+  display: flex;
+  padding: 16px 32px;
+  border-radius: 88px;
+  border: 1px solid #cca75b;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #cca75b;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
