@@ -1,3 +1,10 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important;
+}
+
 .landingPage {
   display: flex;
   flex-direction: column;
@@ -7,6 +14,9 @@
   background-repeat: no-repeat; /* Do not tile the image */
   height: 100vh; /* Full height of the viewport */
   width: 100vw; /* Full width of the viewport */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .mainContent {
@@ -16,10 +26,10 @@
   justify-content: center; /* This centers the image */
   align-items: center;
   position: relative; /* This is new */
+  height: 100vh;
 }
 
-.mainContent button,
-.closeButton {
+.mainContent .closeButton {
   padding: 10px 20px;
   font-size: 1.2rem;
   color: #fff;
@@ -33,12 +43,18 @@
 
 .mainContent button {
   position: absolute; /* This positions the button absolutely within mainContent */
-  bottom: 20%; /* Adjust this value to position the button as needed */
+  bottom: 18%; /* Adjust this value to position the button as needed */
   left: 50%; /* This centers the button horizontally */
-  transform: translateX(
-    -50%
-  ); /* This aligns the center of the button with the center of the container */
-  /* ... other styles ... */
+  transform: translateX(-50%);
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #75b88f;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .mainContent button:hover,
@@ -49,8 +65,9 @@
 
 .proglogueImg {
   /* Adjust if necessary */
-  height: 100svh; /* Adjust if necessary to maintain aspect ratio */
+  height: 100vh;
   /* This will limit the image height to the screen height */
+  overflow: hidden; /* This will hide any overflow */
 }
 
 .iframeContainer {
