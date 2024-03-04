@@ -1,6 +1,7 @@
 .ppvImage {
-  height: 40svh;
+  height: 45svh;
   border-radius: 15px;
+  margin-bottom: 1svh;
 }
 
 .ppvText {
@@ -16,4 +17,26 @@
   padding: 0;
   margin: 0;
   margin-bottom: -10px;
+}
+
+.ppvContainer {
+  background: rgba(217, 217, 217, 0.15);
+  padding: 20px;
+  width: 80svw;
+  border-radius: 10px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ppvButton {
+  background-color: #f9f9f9; /* Match the design color */
+  color: black; /* Text color */
+  padding: 12px 24px; /* Adjust padding to match the design */
+  border-radius: 88px; /* Rounded corners */
+  font-size: 14px; /* Larger font size */
+  margin-top: 2svh; /* Space above the button */
+  border: none; /* Remove border */
+  cursor: pointer;
 }

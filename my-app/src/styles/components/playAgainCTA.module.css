@@ -1,7 +1,6 @@
 .playButton {
   background-color: transparent;
   min-width: 340px;
-
   display: flex;
   padding: 16px 32px;
   border-radius: 88px;
@@ -17,5 +16,4 @@
   font-weight: 900;
   line-height: normal;
   text-transform: uppercase;
-  margin-top: 10px;
 }

@@ -1,13 +1,15 @@
 /* In your App.css */
 .gameOver {
-  background-image: url("../images/newBGRotated.png");
-  background-color: lightgray;
+  background-image: url("../images/lightningbg.png");
+  background-color: rgb(75, 75, 75);
   background-position: center;
   background-size: cover; /* Scale the image to cover the entire container */
   background-repeat: no-repeat;
-  height: 100svh; /*keeps the browsers ui mind and keeps */
-  width: 100vw; /* Full width of the viewport */
+  height: 100vh;
+  width: 100vw;
   margin: 0;
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
+  box-sizing: border-box;
 }
 
 .mainContent {
@@ -22,24 +24,33 @@
 
 .score {
   height: 12svh;
-  margin-top: 1svh;
+  margin-top: 2svh; /* Increase top margin */
+  margin-bottom: 2svh; /* Add bottom margin for spacing */
+  /* Center the text if Score is a component that outputs text directly */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ppv {
-  height: 72svh;
+  max-height: 65vh;
 }
 
 .bottom_buttons {
-  height: 14svh;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: env(safe-area-inset-bottom);
+  gap: 1svh;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .gameOver {
-    background-image: url("../images/newBG.png");
+    background-size: contain; /* Change to contain to ensure the whole image is visible */
+    background-position: center top; /* Adjust the position if necessary */
+    height: 100vh; /* Consider using vh for larger devices where svh might not be necessary */
+    background-repeat: no-repeat; /* Prevent the background from tiling */
+    padding: env(safe-area-inset-top) 0;
   }
 }
