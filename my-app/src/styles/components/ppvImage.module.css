@@ -1,26 +1,12 @@
 .ppvImage {
-  height: 45svh;
-  border-radius: 15px;
+  width: 90%;
+  height: 50svh;
+  border-radius: 5px;
   margin-bottom: 1svh;
 }
 
-.ppvText {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-family: "Playfair Display";
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding: 0;
-  margin: 0;
-  margin-bottom: -10px;
-}
-
 .ppvContainer {
-  background: rgba(217, 217, 217, 0.15);
+  background: #070707;
   padding: 20px;
   width: 80svw;
   border-radius: 10px;
@@ -28,15 +14,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.ppvButton {
-  background-color: #f9f9f9; /* Match the design color */
-  color: black; /* Text color */
-  padding: 12px 24px; /* Adjust padding to match the design */
-  border-radius: 88px; /* Rounded corners */
-  font-size: 14px; /* Larger font size */
-  margin-top: 2svh; /* Space above the button */
-  border: none; /* Remove border */
-  cursor: pointer;
 }

@@ -42,19 +42,21 @@ body {
 }
 
 .mainContent button {
-  position: absolute; /* This positions the button absolutely within mainContent */
-  bottom: 18%; /* Adjust this value to position the button as needed */
-  left: 50%; /* This centers the button horizontally */
+  position: absolute;
+  bottom: 18%; /* Adjust as needed to position the button */
+  left: 50%;
   transform: translateX(-50%);
-  padding: 12px 40px;
-  font-size: 1.2rem;
+  padding: 20px 60px; /* Increased padding for a larger button */
+  font-size: 2rem; /* Larger font size for increased visibility */
   color: #fff;
-  background-color: #75b88f;
+  background-color: #5a9570; /* A vibrant color for better attraction */
   border: none;
-  border-radius: 100px;
+  border-radius: 30px; /* Fully rounded edges for a modern pill shape */
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* More pronounced shadow for depth */
   transition: all 0.3s ease;
+  text-transform: uppercase; /* Capitalized text for emphasis */
+  font-weight: bold; /* Bold font weight for text */
 }
 
 .mainContent button:hover,

@@ -1,56 +1,72 @@
-/* In your App.css */
 .gameOver {
-  background-image: url("../images/lightningbg.png");
-  background-color: rgb(75, 75, 75);
-  background-position: center;
-  background-size: cover; /* Scale the image to cover the entire container */
-  background-repeat: no-repeat;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100svh; /* or 100dvh for dynamic viewport height */
   width: 100vw;
-  margin: 0;
-  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
-  box-sizing: border-box;
+  overflow: hidden; /* No scrolling */
+  align-items: center;
+  justify-content: space-between;
+  background-image: url("../images/upsellBG.jpeg"); /* Update with the correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.mainContent {
+.scoreSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  padding: 1svh 0; /* Adjust padding to reduce the size */
 }
 
-.score {
-  height: 12svh;
-  margin-top: 2svh; /* Increase top margin */
-  margin-bottom: 2svh; /* Add bottom margin for spacing */
-  /* Center the text if Score is a component that outputs text directly */
+.scoreLabel {
+  color: #fff;
+  font-family: "Playfair Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 5px;
+}
+
+.scoreValue {
+  color: #e4d569;
+  margin-top: -10px;
+  font-family: "Playfair Display";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.ppvSection {
+  flex-grow: 2; /* Give PPV section more space */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Adjust padding if needed */
 }
 
-.ppv {
-  max-height: 65vh;
+.ppvImage {
+  max-width: 100%; /* Adjust as necessary */
+  max-height: 60svh; /* Adjust as necessary */
 }
 
-.bottom_buttons {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1svh;
-}
-
-@media (min-width: 600px) {
-  .gameOver {
-    background-size: contain; /* Change to contain to ensure the whole image is visible */
-    background-position: center top; /* Adjust the position if necessary */
-    height: 100vh; /* Consider using vh for larger devices where svh might not be necessary */
-    background-repeat: no-repeat; /* Prevent the background from tiling */
-    padding: env(safe-area-inset-top) 0;
-  }
+.ctaButton {
+  background: #e4d569;
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 8px 16px; /* Slightly smaller padding */
+  border-radius: 88px;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: none;
+  flex: 1; /* Ensure buttons share the space equally */
 }

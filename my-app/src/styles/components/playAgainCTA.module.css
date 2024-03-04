@@ -1,5 +1,5 @@
 .playButton {
-  background-color: transparent;
+  background-color: #e4d569;
   min-width: 340px;
   display: flex;
   padding: 16px 32px;
@@ -8,7 +8,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  color: #cca75b;
+  color: BLACK;
   font-feature-settings: "clig" off, "liga" off;
   font-family: Lato;
   font-size: 14px;
