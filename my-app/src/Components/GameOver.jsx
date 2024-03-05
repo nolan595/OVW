@@ -2,17 +2,46 @@ import React from "react";
 import styles from "../styles/gameOver.module.css";
 import { motion } from "framer-motion";
 import ppvImage from "../images/upsell.jpeg";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function GameOver() {
-  // Replace the following URLs with your actual navigation paths or functions
-  const handleChallengeFriendClick = () => {
-    /* ... */
+  const ppvLink = "https://ovwwrestling.ticketspice.com/ovw-march-mayhem-";
+  let navigate = useNavigate();
+  const gameUrl = "https://ovw-3pigs.netlify.app/";
+  const location = useLocation();
+  const score = location.state?.score || "0";
+
+  const handleShare = () => {
+    console.log("navigator.share:", navigator.share); // For debugging
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "OVW Game",
+          text: `I scored ${score} in the game! Can you beat me? Check out this awesome game: ${gameUrl}`,
+          url: gameUrl,
+        })
+        .then(() => console.log("Successful share"))
+        .catch((error) => console.log("Error sharing", error));
+    } else {
+      // Updated fallback for desktop browsers to use Clipboard API
+      navigator.clipboard
+        .writeText(
+          `I scored ${score} in the game! Can you beat me? Check out this cool game: ${gameUrl}`
+        )
+        .then(() => {
+          alert("Link copied to clipboard!");
+        })
+        .catch((error) => {
+          console.error("Error copying text: ", error);
+          alert("Failed to copy link to clipboard");
+        });
+    }
   };
   const handlePlayAgainClick = () => {
-    /* ... */
+    navigate("/");
   };
   const handlePpvInfoClick = () => {
-    /* ... */
+    window.location.href = ppvLink;
   };
 
   return (
@@ -24,16 +53,13 @@ function GameOver() {
     >
       <div className={styles.scoreSection}>
         <label className={styles.scoreLabel}>Score</label>
-        <div className={styles.scoreValue}>500</div>
+        <div className={styles.scoreValue}>{score}</div>
       </div>
       <div className={styles.ppvSection}>
         <img src={ppvImage} alt="PPV Event" className={styles.ppvImage} />
       </div>
       <div className={styles.ctaSection}>
-        <button
-          className={styles.ctaButton}
-          onClick={handleChallengeFriendClick}
-        >
+        <button className={styles.ctaButton} onClick={handleShare}>
           Challenge a friend
         </button>
         <div className={styles.ctaButtonContainer}>
