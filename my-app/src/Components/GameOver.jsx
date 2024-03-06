@@ -3,6 +3,7 @@ import styles from "../styles/gameOver.module.css";
 import { motion } from "framer-motion";
 import ppvImage from "../images/upsell.jpeg";
 import { useNavigate, useLocation } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 function GameOver() {
   const ppvLink = "https://ovwwrestling.ticketspice.com/ovw-march-mayhem-";
@@ -12,6 +13,11 @@ function GameOver() {
   const score = location.state?.score || "0";
 
   const handleShare = () => {
+    ReactGA.event({
+      category: "Social",
+      action: "Challenge a Friend Clicked",
+      label: `Score: ${score}`,
+    });
     console.log("navigator.share:", navigator.share); // For debugging
     if (navigator.share) {
       navigator
@@ -38,9 +44,19 @@ function GameOver() {
     }
   };
   const handlePlayAgainClick = () => {
+    ReactGA.event({
+      category: "Navigation",
+      action: "Play Again Clicked",
+      label: "Game Over Page",
+    });
     navigate("/");
   };
   const handlePpvInfoClick = () => {
+    ReactGA.event({
+      category: "External Link",
+      action: "PPV Info Clicked",
+      label: "Game Over Page",
+    });
     window.location.href = ppvLink;
   };
 

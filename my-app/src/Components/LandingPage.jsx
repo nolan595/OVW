@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "../styles/landingPage.module.css";
 import { motion } from "framer-motion";
 import prologue from "../images/prologue.png";
+import ReactGA from "react-ga4";
 
 function LandingPage() {
   const [showIframe, setShowIframe] = useState(false);
@@ -34,7 +35,18 @@ function LandingPage() {
       <div className={styles.mainContent}>
         <img className={styles.proglogueImg} src={prologue} alt="" />
         {!showIframe && (
-          <button onClick={() => setShowIframe(true)}>PLAY GAME</button>
+          <button
+            onClick={() => {
+              setShowIframe(true);
+              ReactGA.event({
+                category: "User Interaction",
+                action: "Play Button Click",
+                label: "Landing Page",
+              });
+            }}
+          >
+            PLAY GAME
+          </button>
         )}
       </div>
       {showIframe && (
