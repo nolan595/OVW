@@ -49,8 +49,12 @@ body {
 }
 
 .ppvSection {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 25px 0px;
+  background-color: black;
   max-width: 550px;
-  height: 40svh;
+  height: 50svh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +63,7 @@ body {
 
 .ppvImage {
   max-width: 100%; /* Adjust as necessary */
-  max-height: 60svh; /* Adjust as necessary */
+  max-height: 50svh; /* Adjust as necessary */
 }
 
 .ctaButton {
