@@ -1,0 +1,18 @@
+.shareButton {
+  display: flex;
+  min-width: 340px;
+  background-color: #e4d569;
+  padding: 16px 32px;
+  border-radius: 88px;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  border: none;
+}
