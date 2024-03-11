@@ -47,7 +47,6 @@ body {
   left: 50%;
   transform: translateX(-50%);
   padding: 20px 60px; /* Increased padding for a larger button */
-
   color: #fff;
   background-color: #5a9570; /* A vibrant color for better attraction */
   border: none;
