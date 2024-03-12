@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/landingPage.module.css";
 import { motion } from "framer-motion";
-import prologue from "../images/prologue.png";
+import prologue from "../images/prologue.jpg";
 import ReactGA from "react-ga4";
 
 function LandingPage() {
