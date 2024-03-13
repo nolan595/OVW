@@ -54,7 +54,7 @@ function LandingPage() {
           <iframe src="/Catcher/index.html" title="Game"></iframe>
           <button
             className={styles.closeButton}
-            onClick={() => setShowIframe(false)}
+            onClick={() => navigate("/game-over")}
           >
             X
           </button>
