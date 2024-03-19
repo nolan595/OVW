@@ -69,10 +69,6 @@ function GameOver() {
     window.location.href = ppvLink;
   };
 
-  const toggleMute = () => {
-    setIsMuted(!isMuted);
-  };
-
   return (
     <motion.div
       className={styles.gameOver}
