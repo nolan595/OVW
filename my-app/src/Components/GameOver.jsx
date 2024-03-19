@@ -17,7 +17,6 @@ function GameOver() {
   const score = location.state?.score || "0";
   const currentCharIndex = location.state?.current_char_index || "0";
   console.log(currentCharIndex, score);
-  const [isMuted, setIsMuted] = useState(false);
   const videos = [Kal, Freya, CashFlo, Haley];
   const ppvVideo = videos[currentCharIndex];
 
