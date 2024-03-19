@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../styles/gameOver.module.css";
 import { motion } from "framer-motion";
 // import ppvImage from "../images/upsell.jpeg";
