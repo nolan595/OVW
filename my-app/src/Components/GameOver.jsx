@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/gameOver.module.css";
 import { motion } from "framer-motion";
-import ppvImage from "../images/upsell.jpeg";
+// import ppvImage from "../images/upsell.jpeg";
 import { useNavigate, useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
+import Kal from "../videos/Kal.mp4";
+import Freya from "../videos/Freya.mp4";
+import CashFlo from "../videos/CashFlo.mp4";
+import Haley from "../videos/Haley.mp4";
 
 function GameOver() {
   const ppvLink = "https://ovwwrestling.ticketspice.com/ovw-march-mayhem-";
@@ -11,6 +15,11 @@ function GameOver() {
   const gameUrl = "https://ovw-3pigs.netlify.app/";
   const location = useLocation();
   const score = location.state?.score || "0";
+  const currentCharIndex = location.state?.current_char_index || "0";
+  console.log(currentCharIndex, score);
+  const [isMuted, setIsMuted] = useState(false);
+  const videos = [Kal, Freya, CashFlo, Haley];
+  const ppvVideo = videos[currentCharIndex];
 
   const handleShare = () => {
     ReactGA.event({
@@ -60,6 +69,10 @@ function GameOver() {
     window.location.href = ppvLink;
   };
 
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
   return (
     <motion.div
       className={styles.gameOver}
@@ -72,7 +85,17 @@ function GameOver() {
         <div className={styles.scoreValue}>{score}</div>
       </div>
       <div className={styles.ppvSection}>
-        <img src={ppvImage} alt="PPV Event" className={styles.ppvImage} />
+        <video
+          src={ppvVideo}
+          alt="PPV Event"
+          className={styles.ppvImage}
+          controls
+          autoPlay
+          loop
+          muted
+        >
+          Your browser does not support the video tag.
+        </video>
       </div>
       <div className={styles.ctaSection}>
         <button className={styles.ctaButton} onClick={handleShare}>

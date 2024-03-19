@@ -51,9 +51,10 @@ body {
 .ppvSection {
   border: 1px solid white;
   border-radius: 10px;
-  padding: 25px 0px;
+  padding: 0px 0px;
   background-color: black;
   max-width: 550px;
+  width: 80%;
   height: 50svh;
   display: flex;
   justify-content: center;
@@ -62,6 +63,7 @@ body {
 }
 
 .ppvImage {
+  height: 100%;
   max-width: 100%; /* Adjust as necessary */
   max-height: 50svh; /* Adjust as necessary */
 }

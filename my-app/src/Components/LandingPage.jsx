@@ -8,13 +8,25 @@ import ReactGA from "react-ga4";
 function LandingPage() {
   const [showIframe, setShowIframe] = useState(false);
   const navigate = useNavigate();
+  const [currentCharIndex, setCurrentCharIndex] = useState(null);
 
   useEffect(() => {
     const handleMessage = (event) => {
       try {
         const data = JSON.parse(event.data);
-        if (data.action === "gameOver") {
-          navigate("/game-over", { state: { score: data.score } });
+        if (data.action === "playButtonPressed") {
+          // Save the current_char_index when the play button is pressed
+          setCurrentCharIndex(data.current_char_index);
+        } else if (data.action === "gameOver") {
+          // Pass both score and current_char_index to the game-over page
+          navigate("/game-over", {
+            state: {
+              score: data.score,
+              // Use the saved currentCharIndex or default to "0" if it's null
+              current_char_index:
+                currentCharIndex !== null ? currentCharIndex : "0",
+            },
+          });
         }
       } catch (e) {
         console.error("Error parsing message from iframe:", e);
@@ -23,7 +35,7 @@ function LandingPage() {
 
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
-  }, [navigate]);
+  }, [navigate, currentCharIndex]);
 
   return (
     <motion.div
@@ -54,7 +66,15 @@ function LandingPage() {
           <iframe src="/Catcher/index.html" title="Game"></iframe>
           <button
             className={styles.closeButton}
-            onClick={() => navigate("/game-over")}
+            onClick={() =>
+              navigate("/game-over", {
+                state: {
+                  // Use the saved currentCharIndex or default to "0" if it's null
+                  current_char_index:
+                    currentCharIndex !== null ? currentCharIndex : "0",
+                },
+              })
+            }
           >
             X
           </button>
