@@ -4,10 +4,6 @@ import { motion } from "framer-motion";
 // import ppvImage from "../images/upsell.jpeg";
 import { useNavigate, useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
-import Kal from "../videos/Kal.mp4";
-import Freya from "../videos/Freya.mp4";
-import CashFlo from "../videos/CashFlo.mp4";
-import Haley from "../videos/Haley.mp4";
 
 function GameOver() {
   const ppvLink = "https://ovwwrestling.ticketspice.com/ovw-march-mayhem-";
@@ -17,8 +13,7 @@ function GameOver() {
   const score = location.state?.score || "0";
   const currentCharIndex = location.state?.current_char_index || "0";
   console.log(currentCharIndex, score);
-  const videos = [Kal, Freya, CashFlo, Haley];
-  const ppvVideo = videos[currentCharIndex];
+  // const ppvVideo = videos[currentCharIndex];
 
   const handleShare = () => {
     ReactGA.event({
@@ -68,6 +63,14 @@ function GameOver() {
     window.location.href = ppvLink;
   };
 
+  const KalID = "lyVoXtjK61o";
+  const FreyaID = "96olAuSSgSY";
+  const CashID = "NrTRP5sXmzI";
+  const HaleyID = "qIdwtGsaqCc";
+  const VideoIDs = [KalID, FreyaID, CashID, HaleyID];
+  const ppvVideo = VideoIDs[currentCharIndex];
+  const youtubeVideoUrl = `https://www.youtube.com/embed/${ppvVideo}?autoplay=1&mute=1`;
+
   return (
     <motion.div
       className={styles.gameOver}
@@ -80,17 +83,13 @@ function GameOver() {
         <div className={styles.scoreValue}>{score}</div>
       </div>
       <div className={styles.ppvSection}>
-        <video
-          src={ppvVideo}
-          alt="PPV Event"
-          className={styles.ppvImage}
-          controls
-          autoPlay
-          loop
-          muted
-        >
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          src={youtubeVideoUrl}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className={styles.ppvImage} // Use the same className for styling
+        ></iframe>
       </div>
       <div className={styles.ctaSection}>
         <button className={styles.ctaButton} onClick={handleShare}>

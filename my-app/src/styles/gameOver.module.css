@@ -55,7 +55,7 @@ body {
   background-color: black;
   max-width: 550px;
   width: 80%;
-  height: 50svh;
+  height: 55svh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +63,7 @@ body {
 }
 
 .ppvImage {
+  border: none;
   height: 100%;
   max-width: 100%; /* Adjust as necessary */
   max-height: 50svh; /* Adjust as necessary */
