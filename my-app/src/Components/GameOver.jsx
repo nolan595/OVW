@@ -60,7 +60,7 @@ function GameOver() {
       action: "PPV Info Clicked",
       label: "Game Over Page",
     });
-    window.location.href = ppvLink;
+    window.open(ppvLink, "_blank").focus();
   };
 
   const KalID = "lyVoXtjK61o";
