@@ -12,7 +12,6 @@ function GameOver() {
   const location = useLocation();
   const score = location.state?.score || "0";
   const currentCharIndex = location.state?.current_char_index || "0";
-  console.log(currentCharIndex, score);
   // const ppvVideo = videos[currentCharIndex];
 
   const handleShare = () => {
@@ -21,7 +20,6 @@ function GameOver() {
       action: "Challenge a Friend Clicked",
       label: `Score: ${score}`,
     });
-    console.log("navigator.share:", navigator.share); // For debugging
     if (navigator.share) {
       navigator
         .share({
