@@ -14,7 +14,8 @@ function LandingPage() {
   useEffect(() => {
     const handleMessage = (event) => {
       try {
-        const data = JSON.parse(event.data);
+        const data =
+          typeof event.data === "string" ? JSON.parse(event.data) : event.data;
         if (data.action === "playButtonPressed") {
           // Save the current_char_index when the play button is pressed
           setCurrentCharIndex(data.current_char_index);

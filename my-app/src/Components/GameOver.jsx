@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../styles/gameOver.module.css";
 import { motion } from "framer-motion";
-// import ppvImage from "../images/upsell.jpeg";
 import { useNavigate, useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
 
@@ -12,7 +11,6 @@ function GameOver() {
   const location = useLocation();
   const score = location.state?.score || "0";
   const currentCharIndex = location.state?.current_char_index || "0";
-  // const ppvVideo = videos[currentCharIndex];
 
   const handleShare = () => {
     ReactGA.event({
